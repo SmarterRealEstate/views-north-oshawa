@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIEWS North Oshawa | Modern Farmhouse Homes | VIP Platinum Registration</title>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','4093978017293385');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4093978017293385&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Fonts: Josefin Sans (≈ TeX Gyre Adventor) + Encode Sans + Encode Sans Condensed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Encode+Sans:wght@300;400;500;600;700&family=Encode+Sans+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:    #566C6E;
+      --teal2:   #435658;
+      --steel:   #798590;
+      --dark:    #333333;
+      --text:    #555555;
+      --text-lt: #777777;
+      --light:   #F3F3F3;
+      --white:   #ffffff;
+      --red:     #AF1517;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Encode Sans', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(51, 51, 51, 0.96);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      height: 34px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-cta {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--teal);
+      border: 2px solid var(--teal);
+      padding: 11px 26px;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+    .nav-cta:hover {
+      background: transparent;
+      color: var(--teal);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://jefferyhomes.com/images/views-models-new/Horizon_A.jpg') center/cover no-repeat;
+      padding: 140px 20px 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(51, 51, 51, 0.65);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 840px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.75;
+      margin-bottom: 24px;
+    }
+
+    .hero-wordmark {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .hero-sub-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.85;
+      margin-bottom: 32px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--white);
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 44px;
+      line-height: 1.8;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--teal);
+      border: 2px solid var(--teal);
+      padding: 16px 48px;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--white);
+    }
+
+    /* ── STATS STRIP ── */
+    .stats {
+      background: var(--teal);
+      padding: 28px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+      color: var(--white);
+    }
+    .stat-num {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: block;
+      letter-spacing: 0.08em;
+    }
+    .stat-label {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    /* ── INTRO SECTION ── */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+    .intro-text {
+      background: var(--white);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .intro-text .eyebrow {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+    .intro-text h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .intro-text p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .intro-img {
+      background: url('https://jefferyhomes.com/images/Views/10079_JefferyWebsite_Views.webp') center/cover no-repeat;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights {
+      background: var(--light);
+      padding: 90px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .highlights .section-eyebrow {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .highlights h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--dark);
+      margin-bottom: 60px;
+    }
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+    }
+    .highlight-card {
+      background: var(--white);
+      text-align: left;
+      padding: 36px 28px;
+      border-top: 3px solid var(--teal);
+    }
+    .highlight-num {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--teal);
+      opacity: 0.18;
+      display: block;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .highlight-card h3 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .highlight-card p {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.75;
+    }
+
+    /* ── LIFESTYLE SPLIT ── */
+    .lifestyle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+    .lifestyle-img {
+      background: url('https://jefferyhomes.com/images/Views/features-and-finishes.webp') center/cover no-repeat;
+    }
+    .lifestyle-text {
+      background: var(--teal2);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .lifestyle-text .eyebrow {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.65;
+      margin-bottom: 20px;
+    }
+    .lifestyle-text h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .lifestyle-text p {
+      font-size: 0.95rem;
+      color: var(--white);
+      opacity: 0.85;
+      line-height: 1.85;
+    }
+
+    /* ── FORM SECTION ── */
+    .form-section {
+      background: var(--dark);
+      padding: 90px 40px;
+      text-align: center;
+      scroll-margin-top: 70px;
+    }
+    .form-section .section-eyebrow {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.55;
+      margin-bottom: 16px;
+    }
+    .form-section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .form-section .form-sub {
+      font-size: 0.95rem;
+      color: var(--white);
+      opacity: 0.75;
+      margin-bottom: 48px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #hs-form-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── BUILDER SECTION ── */
+    .builder {
+      background: var(--light);
+      padding: 70px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .builder-logo-wrap img {
+      height: 50px;
+      width: auto;
+      opacity: 0.85;
+    }
+    .builder-text { max-width: 540px; }
+    .builder-text h3 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .builder-text p {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.75;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 32px 40px;
+      text-align: center;
+      font-size: 0.72rem;
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    /* ── HubSpot overrides ── */
+    .hubspot-link__container,
+    .hubspot-link__container *,
+    .hs-form__virality-link,
+    .hs-form__virality-link * { display: none !important; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-logo { height: 26px; }
+      .intro, .lifestyle { grid-template-columns: 1fr; }
+      .intro-img, .lifestyle-img { min-height: 280px; }
+      .intro-text, .lifestyle-text { padding: 50px 28px; }
+      .highlights { padding: 60px 20px; }
+      .highlights-grid { grid-template-columns: 1fr; gap: 20px; }
+      .stats { gap: 28px; padding: 24px 20px; }
+      .builder { flex-direction: column; text-align: center; gap: 24px; }
+      .form-section { padding: 60px 20px; }
+      .hero-wordmark { letter-spacing: 0.12em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <img class="nav-logo"
+      src="https://jefferyhomes.com/images/jeffery-logo.png"
+      alt="Jeffery Homes" />
+    <a class="nav-cta" href="#register">Register for VIP Platinum Access</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Now Registering &mdash; North Oshawa</p>
+      <div class="hero-wordmark">VIEWS</div>
+      <p class="hero-sub-title">By Jeffery Homes &bull; North Oshawa</p>
+      <p>A thoughtful collection of modern farmhouse detached homes on 36&rsquo; and 40&rsquo; lots &mdash; where comfort, quality, and community come together.</p>
+      <a class="btn-primary" href="#register">Register for VIP Platinum Access</a>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">1,322&ndash;3,039</span>
+      <span class="stat-label">Square Feet</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">36&rsquo; &amp; 40&rsquo;</span>
+      <span class="stat-label">Lot Widths</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">2&ndash;4</span>
+      <span class="stat-label">Bedrooms</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">North Oshawa</span>
+      <span class="stat-label">Location</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-text">
+      <p class="eyebrow">Welcome to Views</p>
+      <h2>Modern Farmhouse.<br>North Oshawa&rsquo;s Premier Community.</h2>
+      <p>VIEWS is redefining comfort and convenience in North Oshawa. A thoughtful collection of floorplans designed for your family&rsquo;s changing needs &mdash; stylish farmhouse aesthetics meet flexible function with adaptable spaces, high-quality finishes, and smart home technology.</p>
+      <p>Built by award-winning Jeffery Homes, each residence features Energy Star&reg; building practices and the option to go Net Zero Ready &mdash; up to 80% more energy efficient than homes built to traditional standards.</p>
+    </div>
+    <div class="intro-img"></div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <div style="background:var(--light);">
+  <section class="highlights">
+    <p class="section-eyebrow">Why Views</p>
+    <h2>Built Around How You Live</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <span class="highlight-num">01</span>
+        <h3>Premier Location</h3>
+        <p>Situated at the highest elevation of Harmony Road in North Oshawa, with stunning sunset views. Minutes from Hwy 407, schools, conservation areas, and Durham&rsquo;s best amenities.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-num">02</span>
+        <h3>Modern Farmhouse Design</h3>
+        <p>10 thoughtfully designed floor plans ranging from 1,322 to 3,039 sq. ft. on 36&rsquo; and 40&rsquo; lots &mdash; with options for brick &amp; stone exteriors, walkout basements, and more.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-num">03</span>
+        <h3>High-Quality Finishes</h3>
+        <p>Custom cabinetry, large eat-in kitchens, luxurious freestanding tubs, glass-enclosed showers, and premium features throughout. This is new home building elevated.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-num">04</span>
+        <h3>Smart &amp; Energy-Efficient</h3>
+        <p>Every home built to Energy Star&reg; standards. Net Zero Ready available &mdash; up to 80% more energy efficient, designed for solar panel installation, and a smaller carbon footprint.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-num">05</span>
+        <h3>Community &amp; Nature</h3>
+        <p>Conservation areas, farmers markets, golf courses, and top schools &mdash; all within easy reach. Plus Ontario Tech University and Durham College nearby for families of all stages.</p>
+      </div>
+      <div class="highlight-card">
+        <span class="highlight-num">06</span>
+        <h3>VIP Platinum Access</h3>
+        <p>Be first through the door. Register now to receive exclusive pricing, floor plans, and incentives before the public opening. Spots are limited &mdash; don&rsquo;t miss out.</p>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- LIFESTYLE SPLIT -->
+  <section class="lifestyle">
+    <div class="lifestyle-img"></div>
+    <div class="lifestyle-text">
+      <p class="eyebrow">Location</p>
+      <h2>Everything You Need, Right Here</h2>
+      <p>VIEWS is situated at Harmony Road North and Conlin Road in North Oshawa &mdash; a community on the move. Enjoy incredible shopping, dining, golf, farmers markets, and entertainment facilities, all within minutes of your front door. Commuting? You&rsquo;re steps from Hwy 407 and 115, with GO Transit close by. Staying local? Everything you need is already here.</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="register">
+    <p class="section-eyebrow">VIP Platinum Registration</p>
+    <h2>Get First Access to Views</h2>
+    <p class="form-sub">Register now to receive exclusive VIP Platinum pricing, floor plans, and incentives before the public opening. Spots are limited.</p>
+    <div id="hs-form-container"></div>
+  </section>
+
+  <!-- BUILDER -->
+  <section class="builder">
+    <div class="builder-logo-wrap">
+      <img src="https://jefferyhomes.com/images/jeffery-logo.png" alt="Jeffery Homes" />
+    </div>
+    <div class="builder-text">
+      <h3>About Jeffery Homes</h3>
+      <p>Jeffery Homes is an award-winning homebuilder with a reputation for quality, craftsmanship, and community. Known for treating every home as if it were their own, Jeffery Homes brings a truly custom-home mindset to subdivision building &mdash; making the buying experience as exceptional as the homes themselves.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    We do not represent the builder directly. We represent you. Renderings are artist&rsquo;s imagination only. All information, prices, specifications, floor plans, and incentives are subject to change at any time without notice. E. &amp; O.E.<br>
+    Jeffrey Villeneuve &nbsp;|&nbsp; Meta Realty Inc. &nbsp;|&nbsp; info@smarterrealestate.ca &nbsp;|&nbsp; (647) 409-7653
+  </footer>
+
+  <!-- HubSpot -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    var HS_PORTAL = '39925421';
+    var HS_FORM   = 'a9fd3217-80b0-46a8-93e5-059d5be17d4d';
+
+    hbspt.forms.create({
+      region:   'na2',
+      portalId: HS_PORTAL,
+      formId:   HS_FORM,
+      target:   '#hs-form-container',
+      onFormReady: function($form) {
+        try {
+          var iframe = document.querySelector('.hs-form-iframe');
+          if (iframe && iframe.contentDocument) {
+            var s = iframe.contentDocument.createElement('style');
+            var css = '.hs-button,input[type="submit"]{background:#566C6E!important;background-color:#566C6E!important;color:#ffffff!important;font-family:"Encode Sans Condensed",sans-serif!important;font-size:11px!important;font-weight:700!important;letter-spacing:3px!important;text-transform:uppercase!important;padding:16px 40px!important;border:2px solid #566C6E!important;border-radius:0!important;width:100%!important;box-shadow:none!important;cursor:pointer!important;}.hs-button:hover,input[type="submit"]:hover{background:transparent!important;background-color:transparent!important;color:#566C6E!important;border-color:#566C6E!important;}.hs-form__virality-link,.hs-form__virality-link *,.hubspot-link__container,.hubspot-link__container *{display:none!important;}';
+            s.appendChild(iframe.contentDocument.createTextNode(css));
+            iframe.contentDocument.head.appendChild(s);
+          }
+        } catch(e) {}
+      },
+      onFormSubmit: function($form) {
+        fbq('track', 'Lead', { content_name: 'Views North Oshawa VIP Registration' });
+      }
+    });
+  </script>
+
+</body>
+</html>
