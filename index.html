@@ -438,6 +438,22 @@
       .form-section { padding: 60px 20px; }
       .hero-wordmark { letter-spacing: 0.12em; }
     }
+  
+    /* Custom form */
+    .form-group{margin-bottom:18px;}
+    .form-group label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+    .form-group input,.form-group select{width:100%;padding:14px 16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:2px;color:#fff;font-family:inherit;font-size:15px;outline:none;}
+    .form-group input::placeholder{color:rgba(255,255,255,0.4);}
+    .form-group select option{background:#1a1a1a;color:#fff;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:540px){.form-row{grid-template-columns:1fr;}}
+    .form-submit{width:100%;margin-top:8px;padding:18px;background:#566C6E;color:#ffffff;border:2px solid #566C6E;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;}
+    .form-submit:hover:not(:disabled){opacity:0.85;}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;}
+    .form-note{margin-top:12px;font-size:12px;color:rgba(255,255,255,0.45);text-align:center;}
+    .form-success{display:none;text-align:center;padding:40px 20px;}
+    .form-success h3{font-size:26px;margin-bottom:14px;}
+    .form-success p{font-size:15px;line-height:1.7;opacity:.8;}
   </style>
 </head>
 <body>
@@ -547,7 +563,25 @@
     <p class="section-eyebrow">VIP Platinum Registration</p>
     <h2>Get First Access to Views</h2>
     <p class="form-sub">Register now to receive exclusive VIP Platinum pricing, floor plans, and incentives before the public opening. Spots are limited.</p>
-    <div id="hs-form-container"></div>
+    <div style="max-width:600px;margin:0 auto;">
+<form id="regForm">
+  <div class="form-row">
+    <div class="form-group"><label for="fn">First Name *</label><input type="text" id="fn" placeholder="Jane" required></div>
+    <div class="form-group"><label for="ln">Last Name *</label><input type="text" id="ln" placeholder="Smith" required></div>
+  </div>
+  <div class="form-group"><label for="ph">Phone Number</label><input type="tel" id="ph" placeholder="(416) 555-0100"></div>
+  <div class="form-group"><label for="em">Email *</label><input type="email" id="em" placeholder="jane@example.com" required></div>
+  <div class="form-group"><label for="rt">Are you a Realtor? *</label>
+    <select id="rt" required><option value="" disabled selected>Select one</option><option value="Yes">Yes</option><option value="No">No</option></select>
+  </div>
+  <button type="submit" class="form-submit" id="submitBtn">Register for VIP Platinum Access</button>
+  <p class="form-note">By submitting you consent to receive communications about this project. Your information is kept private and will never be shared.</p>
+</form>
+<div class="form-success" id="formSuccess">
+  <h3>You're on the VIP List!</h3>
+  <p>We'll be in touch with priority floor plans, pricing, and exclusive incentives reserved for VIP Platinum registrants.</p>
+</div>
+</div>
   </section>
 
   <!-- BUILDER -->
@@ -567,47 +601,44 @@
     Jeffrey Villeneuve &nbsp;|&nbsp; Meta Realty Inc. &nbsp;|&nbsp; info@smarterrealestate.ca &nbsp;|&nbsp; (647) 409-7653
   </footer>
 
-  <!-- HubSpot -->
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-  <script>
-    var HS_PORTAL = '39925421';
-    var HS_FORM   = 'a9fd3217-80b0-46a8-93e5-059d5be17d4d';
 
-    hbspt.forms.create({
-      region:   'na2',
-      portalId: HS_PORTAL,
-      formId:   HS_FORM,
-      target:   '#hs-form-container',
-      onFormReady: function($form) {
-        try {
-          var iframe = document.querySelector('.hs-form-iframe');
-          if (iframe && iframe.contentDocument) {
-            var s = iframe.contentDocument.createElement('style');
-            var css = '.hs-button,input[type="submit"]{background:#566C6E!important;background-color:#566C6E!important;color:#ffffff!important;font-family:"Encode Sans Condensed",sans-serif!important;font-size:11px!important;font-weight:700!important;letter-spacing:3px!important;text-transform:uppercase!important;padding:16px 40px!important;border:2px solid #566C6E!important;border-radius:0!important;width:100%!important;box-shadow:none!important;cursor:pointer!important;}.hs-button:hover,input[type="submit"]:hover{background:transparent!important;background-color:transparent!important;color:#566C6E!important;border-color:#566C6E!important;}.hs-form__virality-link,.hs-form__virality-link *,.hubspot-link__container,.hubspot-link__container *{display:none!important;}label,.hs-field-desc,.hs-richtext{color:#ffffff!important;}.hs-input{background:rgba(255,255,255,0.1)!important;border:1px solid rgba(255,255,255,0.3)!important;color:#ffffff!important;}.hs-input::placeholder{color:rgba(255,255,255,0.5)!important;}select.hs-input option{color:#333!important;background:#fff!important;}.hs-error-msg{color:#ffcccc!important;}.submitted-message{color:#ffffff!important;font-size:16px!important;line-height:1.6!important;}';
-            s.appendChild(iframe.contentDocument.createTextNode(css));
-            iframe.contentDocument.head.appendChild(s);
-              var iframeDoc = iframe && iframe.contentDocument;
-              if (iframeDoc) {
-                var hsForm = iframeDoc.querySelector('form');
-                if (hsForm) {
-                  [['project','Views'],['contact_tier','Tier 6 -Social Media Lead'],['client_type','Preconstruction']].forEach(function(p) {
-                    var ex = hsForm.querySelector('input[name="' + p[0] + '"]');
-                    if (ex) { ex.value = p[1]; } else {
-                      var inp = iframeDoc.createElement('input');
-                      inp.type = 'hidden'; inp.name = p[0]; inp.value = p[1];
-                      hsForm.appendChild(inp);
-                    }
-                  });
-                }
-              }
-          }
-        } catch(e) {}
-      },
-      onFormSubmit: function($form) {
-        fbq('track', 'Lead', { content_name: 'Views North Oshawa VIP Registration' });
-      }
-    });
-  </script>
+
+<script>
+const HS_PORTAL = '39925421';
+const HS_FORM   = 'a9fd3217-80b0-46a8-93e5-059d5be17d4d';
+const HS_TAGS = { lifecyclestage:'lead', contact_tier:'Tier 6 -Social Media Lead', client_type:'Preconstruction', project:'Views' };
+
+document.getElementById('regForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting...'; btn.disabled = true;
+  const payload = {
+    fields: [
+      {name:'firstname', value:document.getElementById('fn').value.trim()},
+      {name:'lastname',  value:document.getElementById('ln').value.trim()},
+      {name:'phone',     value:document.getElementById('ph').value.trim()},
+      {name:'email',     value:document.getElementById('em').value.trim()},
+      {name:'are_you_a_realtor_', value:document.getElementById('rt').value},
+      {name:'lifecyclestage', value:HS_TAGS.lifecyclestage},
+      {name:'contact_tier',  value:HS_TAGS.contact_tier},
+      {name:'client_type',   value:HS_TAGS.client_type},
+      {name:'project',       value:HS_TAGS.project},
+    ],
+    context: {pageUri: window.location.href, pageName: document.title}
+  };
+  try {
+    const res = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/39925421/a9fd3217-80b0-46a8-93e5-059d5be17d4d',
+      {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+    if (!res.ok) throw new Error((await res.json()).message || 'Submission failed');
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name:'Views VIP Registration'});
+    document.getElementById('regForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch(err) {
+    console.error(err);
+    btn.textContent = 'Something went wrong. Please try again.'; btn.disabled = false;
+  }
+});
+</script>
 
 </body>
 </html>
